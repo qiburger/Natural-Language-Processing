@@ -7,20 +7,17 @@ __author__ = 'QHe'
 #   punctuation from the words, and converts them to lowercase.
 #   Returns a dictionary of words, and the total number of words.
 
-import string
-import collections
+import make_histogram
+import sort_histogram
 
-def collect_words(filename):
-    word_dict = collections.defaultdict(int)
-    word_counter = 0
-    for line in open(filename):
-        line = line.replace('-', ' ')
-        for word in line.split():
-            word_counter += 1
-            t = word.strip(string.punctuation + string.whitespace).lower()
-            word_dict[t] += 1
-    return (word_dict, word_counter)
+if __name__ == '__main__':
+    histogram = make_histogram.make_histogram("pg15237.txt")
+    word_count = sum(histogram.values())
+    temp, histogram_sorted = sort_histogram.sort_histogram(histogram)
 
-word_dict, word_counter = collect_words("pg15237.txt")
+
+
+
+
 
 
