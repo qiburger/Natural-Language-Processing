@@ -4,15 +4,7 @@ __author__ = 'QHe'
 
 
 def sort_histogram(dict):
-    sort_by_values = zip(dict.values(), dict.keys())
-    sort_by_keys = dict.items()
-    print sort_by_keys
-    print sort_by_values
-    sorted(sort_by_keys, reverse = True)
-    sorted(sort_by_values, reverse = True)
-    print sort_by_keys
+    sort_by_values = sorted(zip(dict.values(), dict.keys()), reverse=True)
+    sort_by_keys = sorted(dict.items())
     return (sort_by_keys, sort_by_values)
 
-if __name__ == '__main__':
-    sort_histogram(dict())
-    

@@ -2,22 +2,15 @@ __author__ = 'QHe'
 
 #Data structure practice based on Think Python Ch. 13
 
-# 13.1
-#   Write a program that reads a file, breaks each line into words, strips whitespace and
-#   punctuation from the words, and converts them to lowercase.
-#   Returns a dictionary of words, and the total number of words.
-
 import make_histogram
-import sort_histogram
+import random
+
+def choose_from_hist(list):
+    selection_list = []
+    histogram = make_histogram.make_histogram_from_list(list)
+    for keys, values in histogram.items():
+        selection_list.extend([keys] * values)
+    return random.choice(selection_list)
 
 if __name__ == '__main__':
-    histogram = make_histogram.make_histogram("pg15237.txt")
-    word_count = sum(histogram.values())
-    temp, histogram_sorted = sort_histogram.sort_histogram(histogram)
-
-
-
-
-
-
-
+    print choose_from_hist(make_histogram.make_histogram_from_file('words.txt').keys())
