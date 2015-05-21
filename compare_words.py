@@ -1,6 +1,8 @@
 __author__ = 'QHe'
 
-#Compare words in one file against a word bank.
+'''
+Compare words in one file against a word bank.
+'''
 
 import make_histogram
 
