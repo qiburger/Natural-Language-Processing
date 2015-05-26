@@ -1,17 +1,15 @@
 __author__ = 'QHe'
 
-from pylab import *
 import sys
+import matplotlib.pyplot as plt
 
-def plot(x, y, label_1 = 'x', label_2 = 'y', plot_title = 'Simple Plot', filename = "test.png"):
-    plot(x, y)
-
-    xlabel(label_1)
-    ylabel(label_2)
-    title(plot_title)
-    grid(True)
-    savefig(filename)
-    show()
+def simple_plot(x, y):
+    try:
+        plt.plot(x, y)
+    except:
+        print 'plot function takes x and y values to make a simple plot'
+    else:
+        plt.show()
 
 if __name__ == '__main__':
-    plot(*sys.args)
+    simple_plot(*sys.args)
